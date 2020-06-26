@@ -10,10 +10,10 @@ export class BlogComponent implements OnInit {
 
   travels
 
-  constructor(private traveDestinations: TravelDestinationsService) { }
+  constructor(private travelDestinations: TravelDestinationsService) { }
 
   ngOnInit(): void {
-    this.travels = this.traveDestinations.getTravel()
+    this.travels = this.travelDestinations.getTravel()
   }
 
 }

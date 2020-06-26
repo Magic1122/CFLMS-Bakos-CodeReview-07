@@ -12,16 +12,16 @@ export class TravelsComponent implements OnInit {
   travels
   moment: (timeStamp: number) => any = moment;
 
-  constructor(private traveDestinations: TravelDestinationsService) { }
+  constructor(private travelDestinations: TravelDestinationsService) { }
 
   ngOnInit(): void {
-    this.travels = this.traveDestinations.getTravel()
+    this.travels = this.travelDestinations.getTravel()
 
   }
 
   addToCart(id) {
     console.log(id)
-    this.traveDestinations.addTravelToCart(id)
+    this.travelDestinations.addTravelToCart(id)
   }
 
 }

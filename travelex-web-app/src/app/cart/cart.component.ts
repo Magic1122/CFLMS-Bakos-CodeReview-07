@@ -15,16 +15,17 @@ export class CartComponent implements OnInit {
   totalText = 'Total'
   subscription: Subscription
 
-  constructor(public traveDestinations: TravelDestinationsService) { }
+  constructor(public travelDestinations: TravelDestinationsService) { }
 
   ngOnInit(): void {
-    this.cartItems = this.traveDestinations.getCart()
-    this.total = this.traveDestinations.calculateTotal()
+    this.cartItems = this.travelDestinations.getCart()
+    this.total = this.travelDestinations.calculateTotal()
     this.totalText = this.total.discount !== '' ? `Total with ${this.total.discount} discount` : 'Total'
     console.log(this.total)
 
-    this.subscription = this.traveDestinations.cartChanged.subscribe(() => {
-      this.total = this.traveDestinations.calculateTotal()
+    this.subscription = this.travelDestinations.cartChanged.subscribe(() => {
+      this.cartItems = this.travelDestinations.getCart()
+      this.total = this.travelDestinations.calculateTotal()
       this.totalText = this.total.discount !== '' ? `Total with ${this.total.discount} discount` : 'Total'
     })
   }

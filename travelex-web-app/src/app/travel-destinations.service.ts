@@ -115,6 +115,11 @@ shoppingCart: Destination[] = []
     this.shoppingCart = [...this.shoppingCart, travel]
   }
 
+  emptyCart() {
+    this.shoppingCart = []
+    this.cartChanged.next()
+  }
+
   removeTravelFromCart(id: number): void {
     const travelIndex = this.shoppingCart.findIndex((cartItem) => cartItem.id === id)
     console.log(travelIndex)

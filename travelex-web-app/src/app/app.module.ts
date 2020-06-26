@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { TravelsComponent } from './travels/travels.component';
 import { CartComponent } from './cart/cart.component';
+import { FormComponent } from './form/form.component';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +20,13 @@ import { CartComponent } from './cart/cart.component';
     HomeComponent,
     BlogComponent,
     TravelsComponent,
-    CartComponent
+    CartComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

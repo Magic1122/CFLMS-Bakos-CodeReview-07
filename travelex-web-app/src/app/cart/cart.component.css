@@ -19,11 +19,27 @@
   padding: 0;
   outline: none;
   vertical-align: baseline;
-  margin-left: 0.4rem;
+  /* margin-left: 0.4rem; */
+  width: 95px;
+  text-align: center;
 }
 
 .btn:active,
 .btn:focus {
   outline: none;
   border: none;
+}
+
+.price {
+  width: 65px;
+  text-align: left;
+}
+
+@media (max-width: 576px) {
+  .mobile-width {
+    width: 100% !important;
+  }
+  .flex-rev {
+    flex-flow: column-reverse;
+  }
 }
