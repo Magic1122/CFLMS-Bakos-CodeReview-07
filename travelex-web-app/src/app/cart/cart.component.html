@@ -11,8 +11,13 @@
     *ngFor="let item of cartItems"
     >
     <span>{{ item.destination }}</span>
-    <span>{{ item.price }}€</span>
+    <span>{{ item.price }}€
+      <button type="button" class="btn btn-outline-primary" (click)="traveDestinations.removeTravelFromCart(item.id)">Remove</button>
+    </span>
   </li>
-  <li *ngIf="cartItems.length !== 0" class='list-group-item d-flex justify-content-between'><span>{{ totalText }}</span><span>{{ total.total }}€</span></li>
+  <li *ngIf="cartItems.length !== 0" class='list-group-item d-flex justify-content-between'>
+    <span>{{ totalText }}</span>
+    <span>{{ total.total }}€</span>
+  </li>
   </ul>
 </section>

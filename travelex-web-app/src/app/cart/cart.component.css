@@ -13,3 +13,17 @@
   left: 0;
   right: 0;
 }
+
+.btn {
+  border: none;
+  padding: 0;
+  outline: none;
+  vertical-align: baseline;
+  margin-left: 0.4rem;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+  border: none;
+}

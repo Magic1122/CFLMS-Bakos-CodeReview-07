@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TravelDestinationsService } from '../travel-destinations.service';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +13,7 @@ export class CartComponent implements OnInit {
   cartItems
   total
   totalText = 'Total'
+  subscription: Subscription
 
   constructor(public traveDestinations: TravelDestinationsService) { }
 
@@ -19,6 +22,15 @@ export class CartComponent implements OnInit {
     this.total = this.traveDestinations.calculateTotal()
     this.totalText = this.total.discount !== '' ? `Total with ${this.total.discount} discount` : 'Total'
     console.log(this.total)
+
+    this.subscription = this.traveDestinations.cartChanged.subscribe(() => {
+      this.total = this.traveDestinations.calculateTotal()
+      this.totalText = this.total.discount !== '' ? `Total with ${this.total.discount} discount` : 'Total'
+    })
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
   }
 
 }

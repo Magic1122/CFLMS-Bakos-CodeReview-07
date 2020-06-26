@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import * as uuid from 'uuid'
 
 // Function which creates a random timestamp - we will use this later to generate a random createdAt value in our Classes
@@ -95,6 +96,8 @@ export class TravelDestinationsService {
     }
 ]
 
+cartChanged = new Subject<void>()
+
 shoppingCart: Destination[] = []
 
   constructor() { }
@@ -110,6 +113,15 @@ shoppingCart: Destination[] = []
   addTravelToCart(id: number): void {
     const travel = this.destionations.find((destination) => destination.id === id)
     this.shoppingCart = [...this.shoppingCart, travel]
+  }
+
+  removeTravelFromCart(id: number): void {
+    const travelIndex = this.shoppingCart.findIndex((cartItem) => cartItem.id === id)
+    console.log(travelIndex)
+    if (travelIndex !== -1) {
+      this.shoppingCart.splice(travelIndex, 1)
+    }
+    this.cartChanged.next()
   }
 
   calculateTotal(): { total: number, discount: string} {
