@@ -10,10 +10,16 @@ export class BlogComponent implements OnInit {
 
   travels
 
+  clients = ['Alina', 'Patrick', 'David', 'Peter', 'Phil', 'Dora']
+
   constructor(private travelDestinations: TravelDestinationsService) { }
 
   ngOnInit(): void {
     this.travels = this.travelDestinations.getTravel()
+  }
+
+  generateRandomNum() {
+    return Math.floor(Math.random() * 100) + 1
   }
 
 }
