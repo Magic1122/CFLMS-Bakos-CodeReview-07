@@ -112,11 +112,20 @@ shoppingCart: Destination[] = []
     this.shoppingCart = [...this.shoppingCart, travel]
   }
 
-  calculateTotal(): number {
+  calculateTotal(): { total: number, discount: string} {
     let total: number = 0
+    let discount: string = ''
     this.shoppingCart.map((item) => total += item.price)
 
-    return total
+    if (total > 500) {
+      total *= .8
+      discount = '20%'
+    } else if (total > 200 ) {
+      total *= .9
+      discount = '10%'
+    }
+
+    return { total, discount }
   }
 
 }
