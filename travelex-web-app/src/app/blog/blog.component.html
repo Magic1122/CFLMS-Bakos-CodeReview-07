@@ -1,0 +1,13 @@
+<section class="container-fluid home-section d-flex justify-content-center align-items-center">
+  <div class="overlay"></div>
+  <div class="list-group">
+    <a *ngFor="let travel of travels" class="list-group-item list-group-item-action">
+      <div class="w-100 justify-content-between d-sm-block d-lg-flex">
+        <h5 class="mb-1">Travel destination: {{ travel.destination }}</h5>
+        <small>3 days ago from a Client</small>
+      </div>
+      <p class="mb-1">"{{ travel.feedback }}</p>
+      <small>"says our Client"</small>
+    </a>
+  </div>
+</section>
