@@ -5,7 +5,7 @@
       class="list-group-item list-group-item-action col-12 col-md-10 col-lg-8">
       <div class="justify-content-between d-sm-flex d-lg-flex">
         <h5 class="mb-1">Travel destination: {{ travel.destination }}</h5>
-        <small>{{ generateRandomNum() }} days ago from a {{ clients[i] }}</small>
+        <small>{{ generateRandomNum() }} days ago from {{ clients[i] }}</small>
       </div>
       <p class="mb-1">"{{ travel.feedback }}"</p>
       <small>"says our client {{ clients[i] }}"</small>
