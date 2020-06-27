@@ -19,3 +19,10 @@
 .list-group {
   width: 100%;
 }
+
+@media (max-width: 576px) {
+  .container-fluid {
+    height: 1000px;
+  }
+}
+
