@@ -1,3 +1,5 @@
+// navbar component renders the navbar and calls our routerlinks when clicking on a link
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

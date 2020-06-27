@@ -1,3 +1,5 @@
+// the home componenet renders the home site with a jumbotron in the middle
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

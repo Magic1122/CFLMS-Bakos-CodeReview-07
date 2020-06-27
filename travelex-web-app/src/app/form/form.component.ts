@@ -1,3 +1,5 @@
+// Our form component renders a form in a modal window, makes validation, gives back information to the user about the order process or the required filed, and also after a valid form sending empties our shopping cart and resets the form
+
 import { Component, OnInit } from '@angular/core';
 import { TravelDestinationsService } from '../travel-destinations.service';
 

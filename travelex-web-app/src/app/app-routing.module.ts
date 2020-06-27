@@ -1,3 +1,5 @@
+// the router module takes care to route to the components which we want to show our users, it also handles the unavailable router with the ** symbol to redirect to the starting point and don't break the application if a user want to react an unavailable route
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';

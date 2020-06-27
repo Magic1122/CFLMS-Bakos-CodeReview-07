@@ -1,3 +1,5 @@
+// the blog component renders our blog entries, gets the data also from the travel service
+
 import { Component, OnInit } from '@angular/core';
 import { TravelDestinationsService } from '../travel-destinations.service';
 
