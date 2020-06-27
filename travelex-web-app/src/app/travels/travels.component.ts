@@ -3,6 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TravelDestinationsService } from '../travel-destinations.service';
 import * as moment from 'moment';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-travels',
@@ -22,6 +23,7 @@ export class TravelsComponent implements OnInit {
   }
 
   addToCart(id) {
+    Swal.fire('Added to the cart!')
     this.travelDestinations.addTravelToCart(id)
   }
 
