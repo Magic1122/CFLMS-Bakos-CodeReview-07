@@ -33,7 +33,7 @@ export class FormComponent implements OnInit {
     if (submittedForm.invalid) {
       return
     }
-    console.log(submittedForm)
+
     this.travelDestinations.emptyCart()
     this.formData = submittedForm.value
     submittedForm.reset()

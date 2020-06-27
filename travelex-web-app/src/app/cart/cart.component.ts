@@ -24,7 +24,6 @@ export class CartComponent implements OnInit {
     this.total = this.travelDestinations.calculateTotal()
     // we show the user the appropriate text in the reflection of the discount value
     this.totalText = this.total.discount !== '' ? `Total with ${this.total.discount} discount` : 'Total'
-    console.log(this.total)
 
     this.subscription = this.travelDestinations.cartChanged.subscribe(() => {
       this.cartItems = this.travelDestinations.getCart()

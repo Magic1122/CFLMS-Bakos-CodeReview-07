@@ -1,27 +1,25 @@
 <section class="container-fluid home-section d-flex justify-content-center align-items-center">
   <div class="overlay"></div>
   <ul class="list-group w-75 mobile-width">
-    <li
-    class="list-group-item d-flex justify-content-center"
-    *ngIf="cartItems.length === 0">
-    Your cart is empty
+    <li class="list-group-item d-flex justify-content-center" *ngIf="cartItems.length === 0">
+      Your cart is empty
     </li>
 
-    <li class="list-group-item d-flex justify-content-between"
-    *ngFor="let item of cartItems"
-    >
-    <span>{{ item.destination }}</span>
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let item of cartItems">
+      <span>{{ item.destination }}</span>
 
-    <span class="d-flex justify-content-start"><span class="price">{{ item.price }}€</span>
-      <button type="button" class="btn btn-outline-primary" (click)="travelDestinations.removeTravelFromCart(item.id)">Remove</button>
-    </span>
-  </li>
-  <li *ngIf="cartItems.length !== 0" class='list-group-item d-flex justify-content-between'>
-    <span>{{ totalText }}</span>
-    <span class="d-flex justify-content-start"><span class="price">{{ total.total }}€</span>
-      <button type="button" class="btn btn-outline-primary flex-rev" data-toggle="modal" data-target="#exampleModal">Checkout</button>
-    </span>
-  </li>
+      <span class="d-flex justify-content-start"><span class="price">{{ item.price }}€</span>
+        <button type="button" class="btn btn-outline-primary"
+          (click)="travelDestinations.removeTravelFromCart(item.id)">Remove</button>
+      </span>
+    </li>
+    <li *ngIf="cartItems.length !== 0" class='list-group-item d-flex justify-content-between'>
+      <span>{{ totalText }}</span>
+      <span class="d-flex justify-content-start"><span class="price">{{ total.total }}€</span>
+        <button type="button" class="btn btn-outline-primary flex-rev" data-toggle="modal"
+          data-target="#exampleModal">Checkout</button>
+      </span>
+    </li>
   </ul>
 </section>
 <app-form></app-form>

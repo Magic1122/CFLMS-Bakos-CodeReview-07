@@ -4,19 +4,20 @@
   <div class="row wrapper mt-5 d-flex justify-content-center">
     <div *ngFor="let travel of travels" class="col-12 col-md-6 col-lg-3">
       <div class="card mb-4 bg-white text-dark">
-          <img src={{travel.img}} class="d-inline-block d-none d-md-inline-block card-img-top img-same" alt="picture of a destination">
-          <div class="card-body">
-              <h5 class="card-title">{{travel.destination}}</h5>
-              <p class="card-text">{{travel.description}}</p>
-              <p class="card-text">Duration: {{travel.duration}} days</p>
-              <p class="card-text">Start date: {{ moment(travel.startDate).format('MMMM Do YYYY')}}</p>
-              <p class="card-text">Price: {{travel.price}}€</p>
-              <button class="btn btn-primary" (click)="addToCart(travel.id)">Add to Cart</button>
-          </div>
-          <div class="card-footer text-muted font-italic">
-            {{ moment(travel.createdAt).format('MMMM Do YYYY, h:mm:ss a') }}
-          </div>
+        <img src={{travel.img}} class="d-inline-block d-none d-md-inline-block card-img-top img-same"
+          alt="picture of a destination">
+        <div class="card-body">
+          <h5 class="card-title">{{travel.destination}}</h5>
+          <p class="card-text">{{travel.description}}</p>
+          <p class="card-text">Duration: {{travel.duration}} days</p>
+          <p class="card-text">Start date: {{ moment(travel.startDate).format('MMMM Do YYYY')}}</p>
+          <p class="card-text">Price: {{travel.price}}€</p>
+          <button class="btn btn-primary" (click)="addToCart(travel.id)">Add to Cart</button>
+        </div>
+        <div class="card-footer text-muted font-italic">
+          {{ moment(travel.createdAt).format('MMMM Do YYYY, h:mm:ss a') }}
+        </div>
       </div>
+    </div>
   </div>
-  </div>
-  </section>
+</section>

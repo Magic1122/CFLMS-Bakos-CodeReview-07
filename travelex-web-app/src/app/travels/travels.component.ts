@@ -19,11 +19,9 @@ export class TravelsComponent implements OnInit {
 
   ngOnInit(): void {
     this.travels = this.travelDestinations.getTravel()
-
   }
 
   addToCart(id) {
-    console.log(id)
     this.travelDestinations.addTravelToCart(id)
   }
 

@@ -130,7 +130,7 @@ shoppingCart: Destination[] = []
 
   removeTravelFromCart(id: number): void {
     const travelIndex = this.shoppingCart.findIndex((cartItem) => cartItem.id === id)
-    console.log(travelIndex)
+
     if (travelIndex !== -1) {
       this.shoppingCart.splice(travelIndex, 1)
     }
